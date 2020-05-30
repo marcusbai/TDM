@@ -1,0 +1,1 @@
+Pyuic5 -o MainApp.py MainApp.ui

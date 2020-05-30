@@ -1,18 +1,22 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.uic import loadUi
-
+from MainApp import Ui_MainWindow
 import sys
-class MainApp:
 
+class MainWindow(QMainWindow):
     def __init__(self):
+        super().__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+        self.ui.pushButton_4.clicked.connect(self.pushButton_4_clicked)
+
+
+    def pushButton_4_clicked(self):
+        print('aaaaaaa')
+
         
-        self.ui = loadUi('MainApp.ui')
-        self.ui.pushButton_4.clicked.connect(self.handleCalc)
-
-    def handleCalc(self):
-
-
-app = QApplication(sys.argv)
-MainApp = MainApp()
-MainApp.ui.show()
-sys.exit(app.exec_())
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    mainw = MainWindow()
+    mainw.show()
+    sys.exit(app.exec_())

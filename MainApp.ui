@@ -52,6 +52,9 @@
         <height>21</height>
        </rect>
       </property>
+      <property name="text">
+       <string>111</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
@@ -108,6 +111,16 @@
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>-40</x>
+        <y>290</y>
+        <width>807</width>
+        <height>87</height>
+       </rect>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -259,16 +272,6 @@
      </attribute>
     </widget>
    </widget>
-   <widget class="QTableView" name="tableView">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>800</y>
-      <width>807</width>
-      <height>87</height>
-     </rect>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -283,5 +286,22 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit</receiver>
+   <slot>repaint()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>673</x>
+     <y>234</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>240</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

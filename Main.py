@@ -8,11 +8,11 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.pushButton_4.clicked.connect(self.pushButton_4_clicked)
+        #self.ui.pushButton_cha.clicked.connect(self.pushButton_cha_clicked)
 
 
-    def pushButton_4_clicked(self):
-        print('aaaaaaa')
+    #def pushButton_cha_clicked(self):
+        #self.set_title="111"
 
         
 if __name__ == "__main__":

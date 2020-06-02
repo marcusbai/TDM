@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'MainApp.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.2
+# Created by: PyQt5 UI code generator 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -61,30 +61,36 @@ class Ui_MainWindow(object):
         self.tab.setObjectName("tab")
         self.gridLayout = QtWidgets.QGridLayout(self.tab)
         self.gridLayout.setObjectName("gridLayout")
-        self.tableView = QtWidgets.QTableView(self.tab)
-        self.tableView.setObjectName("tableView")
-        self.gridLayout.addWidget(self.tableView, 0, 0, 1, 1)
+        self.tableWidget = QtWidgets.QTableWidget(self.tab)
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        self.gridLayout.addWidget(self.tableWidget, 0, 0, 1, 1)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.tab_2)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.tableView_2 = QtWidgets.QTableView(self.tab_2)
-        self.tableView_2.setObjectName("tableView_2")
-        self.gridLayout_2.addWidget(self.tableView_2, 0, 0, 1, 1)
+        self.tableWidget_2 = QtWidgets.QTableWidget(self.tab_2)
+        self.tableWidget_2.setObjectName("tableWidget_2")
+        self.tableWidget_2.setColumnCount(0)
+        self.tableWidget_2.setRowCount(0)
+        self.gridLayout_2.addWidget(self.tableWidget_2, 0, 0, 1, 1)
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QtWidgets.QWidget()
         self.tab_3.setObjectName("tab_3")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.tab_3)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.tableView_3 = QtWidgets.QTableView(self.tab_3)
-        self.tableView_3.setObjectName("tableView_3")
-        self.gridLayout_3.addWidget(self.tableView_3, 0, 0, 1, 1)
+        self.tableWidget_3 = QtWidgets.QTableWidget(self.tab_3)
+        self.tableWidget_3.setObjectName("tableWidget_3")
+        self.tableWidget_3.setColumnCount(0)
+        self.tableWidget_3.setRowCount(0)
+        self.gridLayout_3.addWidget(self.tableWidget_3, 0, 0, 1, 1)
         self.tabWidget.addTab(self.tab_3, "")
         self.verticalLayout.addWidget(self.tabWidget)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 879, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 879, 23))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -92,9 +98,8 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        MainWindow.setTabOrder(self.tableView_2, self.tableView)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

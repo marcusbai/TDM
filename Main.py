@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtSql import *
 from MainApp import Ui_MainWindow
 import sys
 
@@ -9,6 +10,14 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         #self.ui.pushButton_cha.clicked.connect(self.pushButton_cha_clicked)
+    def model1():
+        db = QSqlDatabase.addDatabase('QSQLITE')
+        db.setDatabaseName('./data/tdm.db')
+        df.open()
+        model1=QSqlTableModel(None,db)
+        model1.setTable('tdm')
+        model1.select()
+        return
 
 
     #def pushButton_cha_clicked(self):

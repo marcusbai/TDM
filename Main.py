@@ -14,6 +14,7 @@ class MainWindow(QMainWindow):
         model1=QSqlTableModel(None,db)
         model1.setTable('tdm')
         model1.select()
+        
         self.ui.tableView.setModel(model1)
         self.ui.tableView.show()
         #self.ui.pushButton_cha.clicked.connect(self.pushButton_cha_clicked)

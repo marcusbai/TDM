@@ -8,21 +8,16 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
-        #self.ui.pushButton_cha.clicked.connect(self.pushButton_cha_clicked)
-    def model1():
         db = QSqlDatabase.addDatabase('QSQLITE')
         db.setDatabaseName('./data/tdm.db')
-        df.open()
+        db.open()
         model1=QSqlTableModel(None,db)
         model1.setTable('tdm')
         model1.select()
-        return
-
-
+        self.ui.tableView.setModel(model1)
+        self.ui.tableView.show()
+        #self.ui.pushButton_cha.clicked.connect(self.pushButton_cha_clicked)
     #def pushButton_cha_clicked(self):
-        #self.set_title="111"
-
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)

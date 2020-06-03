@@ -120,7 +120,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
-         <widget class="QTableWidget" name="tableWidget"/>
+         <widget class="QTableView" name="tableView"/>
         </item>
        </layout>
       </widget>
@@ -130,7 +130,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <widget class="QTableWidget" name="tableWidget_2"/>
+         <widget class="QTableView" name="tableView_2"/>
         </item>
        </layout>
       </widget>
@@ -140,7 +140,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
-         <widget class="QTableWidget" name="tableWidget_3"/>
+         <widget class="QTableView" name="tableView_3"/>
         </item>
        </layout>
       </widget>

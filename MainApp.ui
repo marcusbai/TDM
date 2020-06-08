@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>879</width>
-    <height>612</height>
+    <width>870</width>
+    <height>573</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,7 +17,11 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>工装数据管理系统</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>data/icon.jpeg</normaloff>data/icon.jpeg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -47,7 +51,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="placeholderText">
+          <string>请输入KC代码</string>
+         </property>
+        </widget>
        </item>
        <item>
         <spacer name="horizontalSpacer">
@@ -86,21 +94,28 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_cha">
+        <widget class="QPushButton" name="pushButton_query">
          <property name="text">
           <string>查询</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_gai">
+        <widget class="QPushButton" name="pushButton_update">
          <property name="text">
           <string>修改</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_shan">
+        <widget class="QPushButton" name="pushButton_insert">
+         <property name="text">
+          <string>插入</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_del">
          <property name="text">
           <string>删除</string>
          </property>
@@ -153,8 +168,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>879</width>
-     <height>23</height>
+     <width>870</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

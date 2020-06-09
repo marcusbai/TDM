@@ -1,1 +1,1 @@
-pyinstaller -w -D App.py
+pyinstaller --icon ./data/app.ico -w -D TDM.py

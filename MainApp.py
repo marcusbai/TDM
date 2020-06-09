@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(879, 612)
+        MainWindow.resize(870, 573)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -90,7 +90,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.tabWidget)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 879, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 870, 23))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -109,7 +109,7 @@ class Ui_MainWindow(object):
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "请输入KC代码"))
         self.s_name.setText(_translate("MainWindow", "名称"))
         self.pushButton_query.setText(_translate("MainWindow", "查询"))
-        self.pushButton_update.setText(_translate("MainWindow", "修改"))
+        self.pushButton_update.setText(_translate("MainWindow", "保存"))
         self.pushButton_insert.setText(_translate("MainWindow", "插入"))
         self.pushButton_del.setText(_translate("MainWindow", "删除"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "工装沉没成本数据"))

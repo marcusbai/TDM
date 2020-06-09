@@ -103,7 +103,7 @@
        <item>
         <widget class="QPushButton" name="pushButton_update">
          <property name="text">
-          <string>修改</string>
+          <string>保存</string>
          </property>
         </widget>
        </item>
@@ -169,7 +169,7 @@
      <x>0</x>
      <y>0</y>
      <width>870</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

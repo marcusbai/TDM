@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox,QDataWidgetMapper
 from PyQt5.QtSql import *
 from MainApp import Ui_MainWindow
 
@@ -10,14 +10,14 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.statusbar.showMessage('@2020@Marcusbai', 0)
+        self.ui.statusbar.showMessage('Copyright@2020 by:Marcusbai V0.9', 0)
         self.okb = QMessageBox()
 
         self.db = QSqlDatabase.addDatabase('QSQLITE')
         self.db.setDatabaseName('./data/tdm.db')
         self.db.open()
 
-        self.model=QSqlTableModel(None,self.db)
+        self.model = QSqlTableModel(None,self.db)
         self.model.setTable('tdm')
         self.model.setEditStrategy(self.model.OnManualSubmit)
         self.model.select()
@@ -57,15 +57,36 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_del.clicked.connect(self.pushButton_del)
     
     def pushButton_query(self):
-        str_text = self.ui.lineEdit.text()
-        str_text=str_text.upper()
-        if str_text != "" and self.ui.pushButton_query.text()=="查询":
+        str_text = str(self.ui.lineEdit.text())
+        str_text =str_text.upper()
+        if str_text =="" and self.ui.pushButton_query.text()=="查询":
+            self.okb.about(self,'提示','请输入KC代码')
+        elif str_text != "":
             self.model.setFilter(("供应商代码 = '%s'" % (str_text)))
-            self.model.select()
+            self.ui.statusbar.showMessage('查询到"%s"条记录' % (self.model.rowCount()), 0)
             self.ui.pushButton_query.setText("刷新")
+            que = QSqlQuery(self.db)
+            que.prepare("SELECT 供应商名称 FROM tdm WHERE 供应商代码=:Nm")
+            que.bindValue(":Nm",str_text)
+            que.exec()
+            que.next()
+            data = que.value('供应商名称')
+            self.ui.lineEdit_2.setText(data)
 
+        elif str_text =="" and self.ui.pushButton_query.text()=="刷新":
+            self.ui.lineEdit.setText("")
+            self.model.setFilter("")
+            self.ui.statusbar.showMessage('查询到"%s"条记录' % (self.model.rowCount()), 0)
+            self.ui.pushButton_query.setText("查询")
+            self.ui.lineEdit_2.setText("")
     def pushButton_update(self):
-        pass
+        self.model.database().transaction()
+        if (self.model.submitAll()):
+            self.model.database().commit()
+        else:
+            self.model.database().rollback()
+            self.okb.warning(self,'警告',('天啊出错了: "%s"')%(self.model.lastError().text()))
+        #撤销model->revertAll();
 
     def pushButton_insert(self):
         rowNum=self.model.rowCount()
